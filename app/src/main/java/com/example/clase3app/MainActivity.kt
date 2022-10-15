@@ -1,5 +1,6 @@
 package com.example.clase3app
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,12 +16,19 @@ class MainActivity : AppCompatActivity() {
         val texto2 =findViewById<EditText>(R.id.textnro2) //
         val boton = findViewById<Button>(R.id.sumar)
         val resultado = findViewById<TextView>(R.id.resultado)
+        val sig= findViewById<Button>(R.id.siguiente)
 
         boton.setOnClickListener{
             val nro1:Int =texto1.text.toString().toInt()
             val nro2: Int =texto2.text.toString().toInt()
             val suma: Int = nro1+nro2
             resultado.text="Resultado: ${suma.toString()}"
+        }
+
+        sig.setOnClickListener {
+            val intent = Intent(this, Otro::class.java)
+            // start your next activity
+            startActivity(intent)
         }
 
     }
