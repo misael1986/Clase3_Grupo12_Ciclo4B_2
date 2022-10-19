@@ -19,9 +19,10 @@ class MainActivity : AppCompatActivity() {
         val sig= findViewById<Button>(R.id.siguiente)
 
         boton.setOnClickListener{
-            val nro1:Int =texto1.text.toString().toInt()
-            val nro2: Int =texto2.text.toString().toInt()
-            val suma: Int = nro1+nro2
+            var nro1: Int? =texto1.text.toString().toInt()
+            var nro2: Int =texto2.text.toString().toInt()
+            if (nro1==null) nro1=0
+            var suma: Int = nro1+nro2
             resultado.text="Resultado: ${suma.toString()}"
         }
 
